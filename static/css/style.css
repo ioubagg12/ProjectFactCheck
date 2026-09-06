@@ -1,0 +1,445 @@
+:root {
+    --primary: #4361ee;
+    --primary-hover: #3a56d4;
+    --bg: #f8f9fa;
+    --card-bg: #ffffff;
+    --text: #212529;
+    --text-secondary: #6c757d;
+    --success: #2ec4b6;
+    --warning: #ffbe0b;
+    --danger: #ef233c;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    padding: 2rem;
+    text-align: center;
+}
+
+header {
+    margin-bottom: 3rem;
+}
+
+.mode-row {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+}
+
+.mode-row label {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    font-weight: 600;
+}
+
+.mode-select {
+    border: 1px solid #d8dbe2;
+    border-radius: 8px;
+    padding: 0.45rem 0.7rem;
+    font-size: 0.95rem;
+    background-color: var(--card-bg);
+    color: var(--text);
+}
+
+.mode-badge {
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.3rem 0.55rem;
+    border-radius: 999px;
+    background: #e9eefc;
+    color: var(--primary);
+}
+
+h1 {
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+/* Mic Button */
+.mic-container {
+    margin-bottom: 2rem;
+}
+
+.text-input-container {
+    margin: 0 auto 2rem;
+    max-width: 560px;
+    text-align: left;
+}
+
+.claim-input {
+    width: 100%;
+    min-height: 120px;
+    resize: vertical;
+    border: 1px solid #d8dbe2;
+    border-radius: 12px;
+    padding: 0.8rem;
+    font-family: inherit;
+    font-size: 0.98rem;
+    color: var(--text);
+    background: var(--card-bg);
+    box-sizing: border-box;
+}
+
+.check-text-button {
+    margin-top: 0.7rem;
+    border: none;
+    border-radius: 10px;
+    background: var(--primary);
+    color: #fff;
+    font-weight: 600;
+    padding: 0.6rem 1rem;
+    cursor: pointer;
+}
+
+.check-text-button:hover {
+    background: var(--primary-hover);
+}
+
+.mic-button {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--primary);
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(67, 97, 238, 0.3);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.mic-button:hover {
+    background-color: var(--primary-hover);
+    transform: scale(1.05);
+}
+
+.mic-button.recording {
+    background-color: var(--danger);
+    animation: pulse 1.5s infinite;
+}
+
+.material-icons {
+    font-size: 36px;
+}
+
+.status {
+    margin-top: 1rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+/* Spinner */
+.hidden {
+    display: none;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-left-color: var(--primary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 1rem;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(239, 35, 60, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(239, 35, 60, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(239, 35, 60, 0); }
+}
+
+/* Results */
+.transcript-box {
+    background-color: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.transcript-box h3 {
+    margin-top: 0;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.transcript-box p {
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.final-verdict-box {
+    background-color: var(--card-bg);
+    padding: 1rem 1.2rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.final-verdict-row {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.final-verdict-label {
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    color: var(--text-secondary);
+    font-weight: 700;
+}
+
+.final-verdict-note {
+    margin: 0.6rem 0 0;
+    color: var(--text-secondary);
+    font-size: 0.92rem;
+}
+
+/* AI Overview */
+.ai-overview-box {
+    background: linear-gradient(135deg, #eef2ff 0%, #f0f9ff 100%);
+    border: 1px solid #c7d2fe;
+    padding: 1.2rem 1.4rem;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.ai-overview-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.7rem;
+}
+
+.ai-overview-header h3 {
+    margin: 0;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.ai-overview-icon {
+    font-size: 1.1rem;
+    color: var(--primary);
+}
+
+.ai-overview-data {
+    font-size: 0.92rem;
+    color: var(--text);
+    line-height: 1.5;
+    margin: 0 0 0.8rem;
+}
+
+.ai-overview-compare {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: #fff;
+    border-radius: 10px;
+    padding: 0.8rem 1rem;
+    margin-bottom: 0.8rem;
+    justify-content: center;
+}
+
+.ai-compare-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    min-width: 100px;
+}
+
+.compare-label {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-secondary);
+    font-weight: 700;
+}
+
+.compare-value {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text);
+    text-align: center;
+}
+
+.ai-compare-divider {
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+}
+
+.ai-overview-assessment {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    font-style: italic;
+    margin: 0 0 0.6rem;
+}
+
+.ai-overview-verdict-row {
+    display: flex;
+    justify-content: flex-start;
+}
+
+/* Fact Check Cards */
+.fact-card {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    text-align: left;
+    border-left: 5px solid var(--text-secondary);
+}
+
+.rating-tag {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    color: white;
+    background-color: var(--text-secondary); /* Default */
+}
+
+/* Simple heuristics for rating colors */
+.rating-false, .rating-pants-fire { background-color: var(--danger); border-color: var(--danger); }
+.rating-true, .rating-correct { background-color: var(--success); border-color: var(--success); }
+.rating-mixture, .rating-half-true { background-color: var(--warning); color: black; border-color: var(--warning); }
+
+.claim-text {
+    font-weight: 600;
+    margin: 0.5rem 0;
+}
+
+.verdict-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0.3rem 0 0.6rem;
+}
+
+.verdict-label {
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    color: var(--text-secondary);
+    font-weight: 700;
+}
+
+.verdict-badge {
+    display: inline-block;
+    padding: 0.2rem 0.6rem;
+    border-radius: 999px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.verdict-correct {
+    background: var(--success);
+}
+
+.verdict-false {
+    background: var(--danger);
+}
+
+.verdict-partial {
+    background: var(--warning);
+    color: #111;
+}
+
+.verdict-unverified {
+    background: var(--text-secondary);
+}
+
+.comparison-box,
+.sources-box {
+    margin-top: 0.9rem;
+    background: #f3f6fc;
+    border-radius: 10px;
+    padding: 0.7rem 0.8rem;
+}
+
+.correction-box {
+    margin-top: 0.9rem;
+    background: #fff6e9;
+    border-left: 4px solid #ffbe0b;
+    border-radius: 10px;
+    padding: 0.7rem 0.8rem;
+}
+
+.comparison-box h4,
+.sources-box h4,
+.correction-box h4 {
+    margin: 0 0 0.45rem;
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.35px;
+    color: var(--text-secondary);
+}
+
+.comparison-box p {
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+.correction-box p {
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+.correction-box ul {
+    margin: 0;
+    padding-left: 1.1rem;
+}
+
+.publisher {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.card-link {
+    display: block;
+    margin-top: 1rem;
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.card-link:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,1 @@
+from .fact_check_pipeline import FactCheckPipeline

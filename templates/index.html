@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice Fact Checker</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <!-- Google Fonts for a modern look -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Voice Fact Checker</h1>
+            <p>Speak or type a claim to verify it instantly.</p>
+            <div class="mode-row">
+                <label for="modeSelect">Mode</label>
+                <select id="modeSelect" class="mode-select">
+                    <option value="offline">Offline</option>
+                    <option value="online">Online</option>
+                </select>
+                <label for="inputMethodSelect">Input</label>
+                <select id="inputMethodSelect" class="mode-select">
+                    <option value="mic">Microphone</option>
+                    <option value="text">No Mic (Type)</option>
+                </select>
+                <span id="activeModeBadge" class="mode-badge">Active: Offline</span>
+            </div>
+        </header>
+
+        <main>
+            <div class="mic-container">
+                <button id="micButton" class="mic-button">
+                    <span class="material-icons" id="micIcon">mic</span>
+                </button>
+                <div id="statusText" class="status">Click microphone to start</div>
+            </div>
+
+            <div id="textInputContainer" class="text-input-container hidden">
+                <textarea id="claimInput" class="claim-input" placeholder="Type the claim you want to fact-check..."></textarea>
+                <button id="checkTextButton" class="check-text-button">Check typed claim</button>
+                <div id="textStatus" class="status">Enter a claim, then click check.</div>
+            </div>
+
+            <div id="processingIndicator" class="hidden">
+                <div class="spinner"></div>
+                <p id="processStatus">Transcribing...</p>
+            </div>
+
+            <div id="resultsArea" class="hidden">
+                <div class="transcript-box">
+                    <h3>You said:</h3>
+                    <p id="transcriptText">...</p>
+                </div>
+
+                <div id="finalVerdictBox" class="final-verdict-box hidden">
+                    <div class="final-verdict-row">
+                        <span class="final-verdict-label">Final verdict</span>
+                        <span id="finalVerdictBadge" class="verdict-badge verdict-unverified">Unverified</span>
+                    </div>
+                    <p id="finalVerdictNote" class="final-verdict-note"></p>
+                </div>
+                
+                <div id="factChecks">
+                    <!-- Fact check cards will go here -->
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="/static/js/main.js"></script>
+</body>
+</html>
